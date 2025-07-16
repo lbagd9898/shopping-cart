@@ -12,6 +12,7 @@ const InputDiv = styled.div`
 const InputBar = styled.input`
   color: black;
   width: 500px;
+  height: 1.5rem;
   border-radius: 10px;
   box-shadow: 3px 3px 5px lightgray;
 `;
@@ -35,15 +36,17 @@ function Input({ handleClick }) {
   return (
     <>
       <GlobalStyle />
-      <InputDiv>
-        <InputBar
-          type="text"
-          onChange={handleChange}
-          placeholder="Search items here..."
-          value={inputVal}
-        />
-        <Button onClick={() => handleClick(inputVal)}> Search </Button>
-      </InputDiv>
+      <form onSubmit={(e) => handleClick(inputVal, e)}>
+        <InputDiv>
+          <InputBar
+            type="text"
+            onChange={handleChange}
+            placeholder="Search items here..."
+            value={inputVal}
+          />
+          <Button type="submit"> Search </Button>
+        </InputDiv>
+      </form>
     </>
   );
 }
