@@ -11,10 +11,23 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 5px 5px 5px lightgray;
 `;
 
 const H1 = styled.h1`
   color: black;
+`;
+
+const P = styled.p`
+  color: red;
+  font-weight: 600;
+  font-size: 1.2rem;
+`;
+const Li = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
 `;
 
 function CheckOut() {
@@ -30,12 +43,13 @@ function CheckOut() {
       <GlobalStyle />
       <Div>
         <H1>Checkout</H1>
-        <ul>
+        <P>Here is a summary of the items in your cart:</P>
+        <ul style={{ listStyle: "none", padding: "0" }}>
           {Object.entries(relevantGroceries).map(([grocery, quantity]) => (
-            <li>
+            <Li>
               {" "}
-              {grocery}: {quantity}{" "}
-            </li>
+              {grocery} - {quantity}{" "}
+            </Li>
           ))}
         </ul>
       </Div>{" "}

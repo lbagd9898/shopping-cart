@@ -28,7 +28,7 @@ const CartDiv = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-gap: 5px;
 `;
 

@@ -39,6 +39,7 @@ const Button = styled.button`
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 4px 4px 4px gray;
 `;
 function Item({ item, modify }) {
   const [counter, setCounter] = useState(0);
