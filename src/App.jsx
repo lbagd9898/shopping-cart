@@ -64,9 +64,9 @@ function App() {
       <GlobalStyle />
       <Container>
         <Header>Welcome to Price Chopper</Header>
-        <Text1>Let's fill your cart!</Text1>
+        <Text1 role="subtext">Let's fill your cart!</Text1>
         <Logo src={logoImg} alt="Price Chopper Logo"></Logo>
-        <Text2>All of your current cravings await...</Text2>
+        <Text2 role="italic">All of your current cravings await...</Text2>
         <LinkDiv>
           <PointSvg src={pointer}></PointSvg>
           <StyledLink to="shop">Shop Page</StyledLink>

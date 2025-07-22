@@ -33,9 +33,7 @@ const Li = styled.li`
 function CheckOut() {
   const location = useLocation();
   const groceries = location.state;
-  const relevantGroceries = Object.fromEntries(
-    Object.entries(groceries).filter(([key, value]) => value != 0)
-  );
+  const relevantGroceries = groceries.filter((item) => item.number != 0);
   console.log(relevantGroceries);
   return (
     <>
@@ -45,10 +43,10 @@ function CheckOut() {
         <H1>Checkout</H1>
         <P>Here is a summary of the items in your cart:</P>
         <ul style={{ listStyle: "none", padding: "0" }}>
-          {Object.entries(relevantGroceries).map(([grocery, quantity]) => (
+          {relevantGroceries.map((item) => (
             <Li>
               {" "}
-              {grocery} - {quantity}{" "}
+              {item.grocery} - {item.number}{" "}
             </Li>
           ))}
         </ul>

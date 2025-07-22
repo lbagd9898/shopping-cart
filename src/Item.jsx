@@ -55,7 +55,7 @@ function Item({ item, modify }) {
   }
 
   useEffect(() => {
-    modify(item.title, counter);
+    modify(item, counter);
   }, [counter]);
 
   return (

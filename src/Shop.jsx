@@ -73,9 +73,19 @@ function Shop() {
   let entireGroceries = useRef([]);
 
   function modifyCart(grocery, number) {
-    console.log(grocery);
-    console.log(number);
-    setGroceriesInCart((prev) => ({ ...prev, [grocery]: number }));
+    setGroceriesInCart((prev) => {
+      const exists = prev.find((item) => item.grocery === grocery.title);
+      if (exists) {
+        return prev.map((item) =>
+          item.grocery === grocery.title ? { ...item, number: number } : item
+        );
+      } else {
+        return [
+          ...prev,
+          { grocery: grocery.title, price: grocery.price, number: number },
+        ];
+      }
+    });
   }
 
   useEffect(() => {
